@@ -53,7 +53,7 @@ CREATE TABLE assunto (
 
 );
 ```
-### 1.6 Criação a Tabela 'livro'
+### 1.6 Criação a Tabela 'Extra'
 a tabela EXTRA vai servir para exemplificar a exclusão
 ```
 CREATE TABLE extra (
@@ -62,4 +62,12 @@ CREATE TABLE extra (
     quantidade INT(20) NOT FULL,
     preco DOUBLE NOT FULL
 );
+```
+## Passo 2: editar tabelas usando 'ALTER'
+Após a criação da tabela, podemos adicionar novos campos. Vamos adicionar uma coluna 'email' na tabela 'autor'
+
+```
+SQL
+ALTER TABLE autor
+ADD COLUMN email VARCHAR(100);
 ```
