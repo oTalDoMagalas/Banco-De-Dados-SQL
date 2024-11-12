@@ -120,3 +120,51 @@ VAlUES
 ('A Biblioteca da Meia-Noite',2020,3,3,2),
 ('Memórias Póstumas de Brás Cubas',1881,1,2,4);
 ```
+
+## Passo 5: Atualizando os dados usando 'UPDATE'
+Podemos atualizar os dados com o comando UPDATE.
+Vamos corrigir a data de publicação do livro 'Capitães da Areia'
+
+```SQL
+UPDATE livro 
+SET ano_publicaçao = 1938,
+WHERE titulo = 'Capitães da Areia';
+```
+## Passo 6: Excluindo os dados usando 'DELETE'
+Para remover os registros de uma tabela usamos o comando 'DELETE'.
+Vamos excluir o livro 'Memórias Póstumas de Brás Cuba'.
+
+```SQL
+DELETE FROM livro
+WHERE id_livro =4;
+```
+
+## Passo 7: Consultando os dados usando 'SELECT'
+É possivel selecionar os dados para visualizar da forma como quiser.
+Para isso usamos o comando 'SELECT'
+## Passo 7.1: selecionar todos os livros com sua editoras e autores
+Vamos usar dados das tabelas 'livros','editora','autor'e'assunto' usando o comando 'JOIN'
+
+```SQL
+SELECT  livro.titulo AS nome,
+        editora.nome_editora AS editora,
+        autor.nome_autor AS autor,
+        assunto.descricao_assunto AS tema,
+        livro.ano_publicaçao AS ano
+FROM livro
+JOIN editora ON livro.id_editora = editora.id_editora
+JOIN autor ON livro.id_autor = autor.id_autor
+JOIN assunto ON livro.id_assunto = assunto.id_assunto;
+```
+
+#### Passo 7.1: selecionar todos os livros com o mesmo assunto
+Para selecionar todos os livros que pertencem ao mesmo assunto, podemos fazer uma consulta utilizando o comando 'SELECT' com uma condição 'WHERE' especificando o que deseja visualizar.
+
+```SQL
+-- Consulta com filtro WHERE
+SELECT  livro.titulo AS titulo,
+        editora.descricao_assunto AS tema
+FROM livro
+join assunto ON livro.assunto = assunto.id_assunto
+WHERE assunto.descricao_assunto = 'Romance';
+```
