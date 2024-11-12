@@ -2,6 +2,7 @@
 Tutorial de como criar um banco de dados SQL que organiza as informações de 'livros', 'editora', 'autores e 'assuntos'.Este guia será dividido em etapas para demonstrar desde a criação de tabelas, chaves e até manipulação/consulta de dados
 
 ## Resumo de uma estrutura SQL
+
 *_CREATE_ para criar 'Banco de dados' ou 'Tabelas'
 *_ALTER_ para adicionar ou modificar colunas
 *_DROP_ para remover 'Banco de dados' ou 'Tabelas'
@@ -73,6 +74,7 @@ SQL
 ALTER TABLE autor
 ADD COLUMN email VARCHAR(100);
 ```
+<<<<<<< HEAD
 ## Passo 3: Remover tabelas usando 'DROP'
 Se precisa remover uma tabela usamos o comando 'DROP'
 Neste exemplo vamos remover a tabela 'extra'
@@ -80,3 +82,5 @@ Neste exemplo vamos remover a tabela 'extra'
 ```SQL
 DROP TABLE extra;
 ```
+=======
+>>>>>>> 05f4e7c91b9c49b5bcbae0f3db524b1df6e2cb7e
