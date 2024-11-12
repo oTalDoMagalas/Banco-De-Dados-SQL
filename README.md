@@ -43,14 +43,16 @@ CREATE TABLE assunto (
 ```
 ### 1.5 Criação a Tabela 'livro'
 ```
-CREATE TABLE assunto (
+CREATE TABLE livro (
     id_livro INT PRIMARY KEY AUTO_INCREMENT,
     titulo VARCHAR(150) NOT NULL,
     ano_publicaçao YEAR,
-    FOREIG KEY(id_editora) REFERENCES editora(id_editora),
-    FOREING KEY (id_autor) REFERENCES autor(id_autor),
-    FOREING KEY (id_assunto) REFERENCES assunto(id_assunto),
-
+    editora INT,
+    autor INT,
+    assunto INT,
+    FOREIGN KEY(editora) REFERENCES editora(id_editora),
+    FOREIGN KEY (autor) REFERENCES autor(id_autor),
+    FOREIGN KEY (assunto) REFERENCES assunto(id_assunto)
 );
 ```
 ### 1.6 Criação a Tabela 'Extra'
@@ -70,4 +72,11 @@ Após a criação da tabela, podemos adicionar novos campos. Vamos adicionar uma
 SQL
 ALTER TABLE autor
 ADD COLUMN email VARCHAR(100);
+```
+## Passo 3: Remover tabelas usando 'DROP'
+Se precisa remover uma tabela usamos o comando 'DROP'
+Neste exemplo vamos remover a tabela 'extra'
+
+```SQL
+DROP TABLE extra;
 ```
