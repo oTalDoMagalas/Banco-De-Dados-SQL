@@ -61,9 +61,9 @@ a tabela EXTRA vai servir para exemplificar a exclusão
 ```
 CREATE TABLE extra (
     id_livro INT PRIMARY KEY AUTO_INCREMENT,
-    produtos VARCHAR(50) NOT FULL,
-    quantidade INT(20) NOT FULL,
-    preco DOUBLE NOT FULL
+    produtos VARCHAR(50) NOT NULL,
+    quantidade INT(20) NOT NULL,
+    preco DOUBLE NOT NULL
 );
 ```
 ## Passo 2: editar tabelas usando 'ALTER'
@@ -82,5 +82,41 @@ Neste exemplo vamos remover a tabela 'extra'
 ```SQL
 DROP TABLE extra;
 ```
-=======
->>>>>>> 05f4e7c91b9c49b5bcbae0f3db524b1df6e2cb7e
+## Passo 4: Inserindo dados usando 'INSERT'
+Agora que as tabelas já estão prontas, vamos inserir dados nelas
+
+### Passo 4.1: Inserindo dados usando 'editora'
+```SQL
+INSERT INTO editora(nome_editora, pais)
+VALUES
+('Editora Alfa', 'Brasil'),
+('Editora Beta', 'Portugal'),
+('Editora Bertrand Brasil', 'Brasil');
+```
+### Passo 4.2: Inserindo dados ba tavela 'autor'
+```SQL
+INSERT INTO autor(nome_autor, data_nascimento, email)
+VALUES
+('Jorge Aado','1912-08-10','jorginho@gmail.com'),
+('Machado de Assis','1839-06-21','machadinho@gmail.com'),
+('Matt Haing','1975-06-03','matt@gmail.com');
+```
+
+### Passo 4.3: Inserindo dados ba tavela 'assunto'
+```SQL
+INSERT INTO assunto (descricao_assunto)
+VALUES
+('Ficcção'),
+('Mistério'),
+('Terror'),
+('Romance');
+```
+### Passo 4.4: Inserindo dados na tavela 'livro'
+```SQL
+INSERT INTO livro(titulo, ano_publicaçao, editora, autor, assunto)
+VAlUES
+('Capitães de Areia',1937,1,1,4),
+('Dom Casmurra',1899,2,2,4),
+('A Biblioteca da Meia-Noite',2020,3,3,2),
+('Memórias Póstumas de Brás Cubas',1881,1,2,4);
+```
